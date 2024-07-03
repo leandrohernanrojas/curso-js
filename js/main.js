@@ -1,11 +1,10 @@
-
-
-const carrito = []
-
-const susproductos = "sus productos:"
-console.log(susproductos)
+//carrito de compra
 
 let agregar = true
+
+const listadeproductos = []
+const carrito = []
+
 
 function carteras() {
     function carteranegra(agregar) {
@@ -14,11 +13,18 @@ function carteras() {
             precio: "$500"
         }
 
-        let confirmar = prompt("precio $500. ¿quieres agregarlo? (si/no)")
+        let confirmar = prompt("precio $500. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
         if (confirmar == "si") {
             agregar = false
             carrito.push(500)
+            listadeproductos.push( "-Cartera negra, precio: $500 ")
             console.log(carteranegra)
+        }
+        else if(confirmar == "no"){
+            agregar = true
+        }
+        else{
+            alert("respuesta incorrecta")
         }
     }
 
@@ -28,11 +34,18 @@ function carteras() {
             precio: "$550"
         }
 
-        let confirmar = prompt("precio $550. ¿quieres agregarlo? (si/no)")
+        let confirmar = prompt("precio $550. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
         if (confirmar == "si") {
             agregar = false
             carrito.push(550)
+            listadeproductos.push("-Cartera gris plata, precio $550")
             console.log(carteragrisplata)
+        }
+        else if(confirmar == "no"){
+            agregar = true
+        }
+        else{
+            alert("respuesta incorrecta")
         }
     }
 
@@ -61,11 +74,18 @@ function cartucheras() {
             precio: "$200"
         }
 
-        let confirmar = prompt("precio $200. ¿quieres agregarlo? (si/no)")
+        let confirmar = prompt("precio $200. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
         if (confirmar == "si") {
             agregar = false
             carrito.push(200)
+            listadeproductos.push("-Cartuchera color rojo, precio $200")
             console.log(rojo)
+        }
+        else if(confirmar == "no"){
+            agregar = true
+        }
+        else{
+            alert("respuesta incorrecta")
         }
     }
 
@@ -75,11 +95,18 @@ function cartucheras() {
             precio: "$210"
         }
 
-        let confirmar = prompt("precio $210. ¿quieres agregarlo? (si/no)")
+        let confirmar = prompt("precio $210. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
         if (confirmar == "si") {
             agregar = false
             carrito.push(210)
+            listadeproductos.push("-Cartuchera azul, precio $210")
             console.log(azul)
+        }
+        else if(confirmar == "no"){
+            agregar = true
+        }
+        else{
+            alert("respuesta incorrecta")
         }
     }
 
@@ -103,9 +130,9 @@ function cartucheras() {
 
 
 
-let option = parseInt(prompt("elija una opcion: \n 1-carteras \n 2-cartucheras  \n 3-salir"))
+let option = parseInt(prompt("elija una opcion: \n 1-carteras \n 2-cartucheras \n 3-lista de productos \n 4-salir"))
 
-while (option !== 3) {
+while (option !== 4) {
     switch (option) {
         case 1:
             carteras()
@@ -114,16 +141,16 @@ while (option !== 3) {
             cartucheras()
             break
         case 3:
-            billeteras()
-            break
+                alert (listadeproductos+ " -TOTAL: $"+sumar(carrito))
+                break
         default:
             alert("opcion incorrecta")
     }
-    option = parseInt(prompt("elija una opcion: \n 1-carteras \n 2-cartucheras  \n 3-salir"))
+    option = parseInt(prompt("elija una opcion: \n 1-carteras \n 2-cartucheras \n 3-lista de produtos \n 4-salir"))
 }
-alert("gracias por su compra")
+alert("GRACIAS por su compra. Total a apagar: $" + sumar (carrito))
 
-console.log(carrito)
+console.log(carrito,listadeproductos)
 
 function sumar(carrito) {
     let resultado = 0;
@@ -133,7 +160,7 @@ function sumar(carrito) {
     return resultado
 }
 sumar(carrito);
-console.log("total apagar: $" + sumar(carrito))
+
 
 
 
