@@ -60,7 +60,7 @@ function renderProductos(productosArray) {
         <div class="card-body">
         <img src= ${producto.img}>
         <h3 ">${producto.nombre}</h3>
-        <p ">${producto.precio}</p>
+        <p ">$${producto.precio}</p>
         <button class=" btn boton-agregar" id="${producto.id}"> Agregar </button>
         </div>`
 

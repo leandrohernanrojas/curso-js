@@ -35,33 +35,25 @@ header h1 {
     font-size: 500%;
 }
 
+nav {
+    justify-self: center;
+}
+
 nav ul {
     list-style: none;
     padding-left: 50%;
 }
 
-nav ul li {
-    background-color: rgb(185, 17, 121);
-    border-color: rgb(185, 17, 121);
-    text-align: center;
-    border-style: solid;
-    border-radius: 10px;
-}
-
 nav ul li:hover {
-    background-color: rgb(108, 13, 72);
-    border-color: rgb(108, 13, 72);
-}
-
-#carrito-vacio{
-    font-family: 'Berkshire Swash', serif;
-    font-style: italic;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 40px;
+background-color: rgb(108, 13, 72);
+border-color: rgb(108, 13, 72);
 }
 
 #carrito {
+    background-color: rgb(185, 17, 121);
+    text-align: center;
+    border: solid rgb(185, 17, 121);
+    border-radius: 10px;
     font-family: 'Besley', serif;
     text-decoration: none;
     color: #2a2229;
@@ -69,6 +61,9 @@ nav ul li:hover {
 
 #carrito:hover {
     color: whitesmoke;
+
+    background-color: rgb(108, 13, 72);
+border-color: rgb(108, 13, 72);
 }
 
 .subtitulos {
@@ -83,9 +78,12 @@ nav ul li:hover {
 
 
 /*seccion tienda*/
-.carrito-vacio{
-    padding-top: 40px;
+#carrito-vacio{
+    font-family: 'Berkshire Swash', serif;
+    font-style: italic;
+    font-size: 40px;
     text-align: center;
+    padding-top: 40px;
 }
 
 #nuestros-productos {

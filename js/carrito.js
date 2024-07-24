@@ -68,7 +68,7 @@ function renderProductos() {
     <div class="card-body">
         <img src= ../${producto.img}>
         <h3 >${producto.nombre}</h3>
-        <p >${producto.precio}</p>
+        <p >$${producto.precio}</p>
         <button class= "restar">-</button>
         <span class="cantidad">${producto.cantidad}</span>
         <button class="sumar">+</button>
