@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/fondo-body.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: rgba(244, 200, 133, 0.80);
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+}
+
+.logo {
+    width: 180px;
+    justify-self: start;
+}
+
+
+header h1 {
+    color: rgb(185, 17, 121);
+    font-family: 'Berkshire Swash', serif;
+    font-size: 500%;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 50%;
+}
+
+nav ul li {
+    background-color: rgb(185, 17, 121);
+    border-color: rgb(185, 17, 121);
+    text-align: center;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+nav ul li:hover {
+    background-color: rgb(108, 13, 72);
+    border-color: rgb(108, 13, 72);
+}
+
+#carrito-vacio{
+    font-family: 'Berkshire Swash', serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#carrito {
+    font-family: 'Besley', serif;
+    text-decoration: none;
+    color: #2a2229;
+}
+
+#carrito:hover {
+    color: whitesmoke;
+}
+
+.subtitulos {
+    font-family: 'Berkshire Swash', serif;
+    font-style: italic ;
+    font-variant: small-caps;
+    color: #b91179;
+    font-size: 80px;
+}
+
+
+
+
+/*seccion tienda*/
+.carrito-vacio{
+    padding-top: 40px;
+    text-align: center;
+}
+
+#nuestros-productos {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Besley', serif;
+    gap: 20px;
+    margin: 30px;
+}
+
+.card {
+    position: static;
+    --bs-card-bg: #6239533b;
+    max-width: 300px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5%;
+}
+
+
+button {
+    background-color: rgb(135, 22, 33);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    width: 20px;
+    border-style: none;
+}
+
+button:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(176, 40, 54);
+    color: rgb(9, 2, 2);
+    
+}
+#pie-carrito{
+    text-align: center;
+}
+.comprar{
+    width: auto;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+.escondido{
+    display: none;
+}
+
+
+/*fin tienda*/
+
+footer {
+    bottom: 0;
+    gap: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 150px;
+    padding: 20px;
+    margin-top: auto;
+}
+
+footer a img {
+    width: 100%;
+    height: 100%;
+    align-self: end;
+}

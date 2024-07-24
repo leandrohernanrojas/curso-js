@@ -1,167 +1,75 @@
-//carrito de compra
-
-let agregar = true
-
-const listadeproductos = []
-const carrito = []
-
-
-function carteras() {
-    function carteranegra(agregar) {
-        const carteranegra = {
-            color: "negro",
-            precio: "$500"
-        }
-
-        let confirmar = prompt("precio $500. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
-        if (confirmar == "si") {
-            agregar = false
-            carrito.push(500)
-            listadeproductos.push( "-Cartera negra, precio: $500 ")
-            console.log(carteranegra)
-        }
-        else if(confirmar == "no"){
-            agregar = true
-        }
-        else{
-            alert("respuesta incorrecta")
-        }
-    }
-
-    function carteragrisplata(agregar) {
-        const carteragrisplata = {
-            color: "gris plata",
-            precio: "$550"
-        }
-
-        let confirmar = prompt("precio $550. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
-        if (confirmar == "si") {
-            agregar = false
-            carrito.push(550)
-            listadeproductos.push("-Cartera gris plata, precio $550")
-            console.log(carteragrisplata)
-        }
-        else if(confirmar == "no"){
-            agregar = true
-        }
-        else{
-            alert("respuesta incorrecta")
-        }
-    }
-
-
-    let colores = parseInt(prompt("elija una color: \n 1-negro \n 2-gris plata \n 3-volver "))
-    while (colores !== 3) {
-        switch (colores) {
-            case 1:
-                carteranegra()
-                break
-            case 2:
-                carteragrisplata()
-                break
-            default:
-                alert("opcion incorrecta")
-        }
-        colores = parseInt(prompt("elija una color: \n 1-negro \n 2-gris plata \n 3-volver "))
-    }
-
-}
-
-function cartucheras() {
-    function rojo(agregar) {
-        const rojo = {
-            color: "rojo",
-            precio: "$200"
-        }
-
-        let confirmar = prompt("precio $200. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
-        if (confirmar == "si") {
-            agregar = false
-            carrito.push(200)
-            listadeproductos.push("-Cartuchera color rojo, precio $200")
-            console.log(rojo)
-        }
-        else if(confirmar == "no"){
-            agregar = true
-        }
-        else{
-            alert("respuesta incorrecta")
-        }
-    }
-
-    function azul(agregar) {
-        const azul = {
-            color: "azul",
-            precio: "$210"
-        }
-
-        let confirmar = prompt("precio $210. ¿quieres agregarlo? (si/no)").toLocaleLowerCase()
-        if (confirmar == "si") {
-            agregar = false
-            carrito.push(210)
-            listadeproductos.push("-Cartuchera azul, precio $210")
-            console.log(azul)
-        }
-        else if(confirmar == "no"){
-            agregar = true
-        }
-        else{
-            alert("respuesta incorrecta")
-        }
-    }
+const productos = [
+    {
+        id: 1,
+        img: "./img/cartera-beige.jpg",
+        nombre: "cartera beige",
+        precio: 5200
+    },
+    {
+        id: 2,
+        img: "./img/cartera-gris.jpg",
+        nombre: "cartera gris",
+        precio: 5000
+    },
+    {
+        id: 3,
+        img: "./img/cartera-negra-tira-roja.jpg",
+        nombre: "Cartera negra tira roja",
+        precio: 5000
+    },
+    {
+        id: 4,
+        img: "./img/cartuchera-negra.jpg",
+        nombre: "cartuchera negra",
+        precio: 3000
+    },
+    {
+        id: 5,
+        img: "./img/cartuchera-roja.jpg",
+        nombre: "Cartuchera roja",
+        precio: 3000
+    },
+    {
+        id: 6,
+        img: "./img/cartuchera-gris.jpg",
+        nombre: "Cartuchera gris",
+        precio: 3000
+    },
+    {
+        id: 7,
+        img: "./img/llavero-print.jpg",
+        nombre: "Llavero print",
+        precio: 2000
+    },
+    {
+        id: 8,
+        img: "./img/llavero-rosado-gris.jpg",
+        nombre: "Llavero rosado",
+        precio: 2000
+    },
+]
 
 
-    let colores = parseInt(prompt("elija una color: \n 1-rojo \n 2-azul \n 3-volver "))
-    while (colores !== 3) {
-        switch (colores) {
-            case 1:
-                rojo()
-                break
-            case 2:
-                azul()
-                break
-            default:
-                alert("opcion incorrecta")
-        }
-        colores = parseInt(prompt("elija una color: \n 1-rojo \n 2-azul \n 3-volver "))
-    }
+let nuestrosProductos = document.getElementById("nuestros-productos")
 
+function renderProductos(productosArray) {
+    productosArray.forEach(producto => {
+        const card = document.createElement("div");
+        card.classList = "card"
+        card.innerHTML = `
+        <div class="card-body">
+        <img src= ${producto.img}>
+        <h3 ">${producto.nombre}</h3>
+        <p ">${producto.precio}</p>
+        <button class=" btn boton-agregar" id="${producto.id}"> Agregar </button>
+        </div>`
+
+
+        nuestrosProductos.appendChild(card);
+        card.getElementsByTagName("button")[0].addEventListener("click", () => agregarAlCarrito(producto));
+    });
 }
 
 
-
-let option = parseInt(prompt("elija una opcion: \n 1-carteras \n 2-cartucheras \n 3-lista de productos \n 4-salir"))
-
-while (option !== 4) {
-    switch (option) {
-        case 1:
-            carteras()
-            break
-        case 2:
-            cartucheras()
-            break
-        case 3:
-                alert (listadeproductos+ " -TOTAL: $"+sumar(carrito))
-                break
-        default:
-            alert("opcion incorrecta")
-    }
-    option = parseInt(prompt("elija una opcion: \n 1-carteras \n 2-cartucheras \n 3-lista de produtos \n 4-salir"))
-}
-alert("GRACIAS por su compra. Total a apagar: $" + sumar (carrito))
-
-console.log(carrito,listadeproductos)
-
-function sumar(carrito) {
-    let resultado = 0;
-    for (let numero of carrito) {
-        resultado += numero;
-    }
-    return resultado
-}
-sumar(carrito);
-
-
-
-
+renderProductos(productos);
 
