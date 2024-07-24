@@ -20,7 +20,6 @@ function agregarAlCarrito(producto) {
         localStorage.setItem("productos", JSON.stringify(nuevaMemoria));
         return cuenta;
     }
-    // actualizarNumeroDeCarrito()
 }
 function restarAlCarrito(producto) {
     const memoria = JSON.parse(localStorage.getItem("productos"))
