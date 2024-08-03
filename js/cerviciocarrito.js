@@ -39,7 +39,7 @@ function vaciarProductos(producto) {
     const memoria = JSON.parse(localStorage.getItem("productos"))
     const indiceProducto = memoria.findIndex(productos => productos.id === producto.id);
     if (memoria[indiceProducto].cantidad = 1) {
-        memoria.splice(indiceProducto);
+        memoria.splice(indiceProducto,1);
         localStorage.setItem("productos", JSON.stringify(memoria));
     }
 }
