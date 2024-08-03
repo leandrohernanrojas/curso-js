@@ -106,29 +106,37 @@ border-color: rgb(108, 13, 72);
     border-radius: 5%;
 }
 
-
 button {
     background-color: rgb(135, 22, 33);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--bs-body-font-family);
     color: rgb(255, 255, 255);
-    width: 20px;
-    border-style: none;
+    width: 10%;
+    border: rgb(135, 22, 33) solid;
+    border-radius: 10%;
 }
 
 button:hover {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--bs-body-font-family);
     background-color: rgb(176, 40, 54);
     color: rgb(9, 2, 2);
-    
+    border: rgb(176, 40, 54) solid;
+    border-radius: 10%;
 }
 #pie-carrito{
     text-align: center;
+    font-family: var(--bs-body-font-family);
 }
-.comprar{
+.comprar, #vaciar-carrito {
+width: auto;
+border-radius: 5px;
+padding: 5px;
+}
+
+.vaciar-productos{
     width: auto;
-    border-radius: 5px;
-    padding: 5px;
-    
+border-radius: 5px;
+padding: 0 5px 0 5px;
+margin-top: 2%;
 }
 .escondido{
     display: none;

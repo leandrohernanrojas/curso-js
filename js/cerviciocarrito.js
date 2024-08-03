@@ -7,7 +7,7 @@ function agregarAlCarrito(producto) {
         cuenta = 1;
     } else {
         const indiceProducto = memoria.findIndex(productos => productos.id === producto.id);
-        console.log(indiceProducto)
+        // console.log(indiceProducto)
         const nuevaMemoria = memoria;
         if (indiceProducto === -1) {
             nuevaMemoria.push(getNuevoProductoParaMemoria(producto))
@@ -34,6 +34,17 @@ function restarAlCarrito(producto) {
 
     }
 }
+
+function vaciarProductos(producto) {
+    const memoria = JSON.parse(localStorage.getItem("productos"))
+    const indiceProducto = memoria.findIndex(productos => productos.id === producto.id);
+    if (memoria[indiceProducto].cantidad = 1) {
+        memoria.splice(indiceProducto);
+        localStorage.setItem("productos", JSON.stringify(memoria));
+    }
+}
+
+
 
 function getNuevoProductoParaMemoria(producto) {
     const nuevoProducto = producto;

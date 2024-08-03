@@ -1,59 +1,10 @@
-const productosEnCarrito = [
-    {
-        id: 1,
-        img: "../img/cartera-beige.jpg",
-        nombre: "cartera beige",
-        precio: 5200
-    },
-    {
-        id: 2,
-        img: "../img/cartera-gris.jpg",
-        nombre: "cartera gris",
-        precio: 5000
-    },
-    {
-        id: 3,
-        img: "../img/cartera-negra-tira-roja.jpg",
-        nombre: "Cartera negra tira roja",
-        precio: 5000
-    },
-    {
-        id: 4,
-        img: "../img/cartuchera-negra.jpg",
-        nombre: "cartuchera negra",
-        precio: 3000
-    },
-    {
-        id: 5,
-        img: "../img/cartuchera-roja.jpg",
-        nombre: "Cartuchera roja",
-        precio: 3000
-    },
-    {
-        id: 6,
-        img: "../img/cartuchera-gris.jpg",
-        nombre: "Cartuchera gris",
-        precio: 3000
-    },
-    {
-        id: 7,
-        img: "../img/llavero-print.jpg",
-        nombre: "Llavero print",
-        precio: 2000
-    },
-    {
-        id: 8,
-        img: "../img/llavero-rosado-gris.jpg",
-        nombre: "Llavero rosado",
-        precio: 2000
-    },
-]
 
-let nuestrosProductos = document.getElementById("nuestros-productos")
-let unidadesElement = document.getElementById("total-unidades")
-let precioElement = document.getElementById("total-a-pagar")
+const nuestrosProductos = document.getElementById("nuestros-productos")
+const unidadesElement = document.getElementById("total-unidades")
+const precioElement = document.getElementById("total-a-pagar")
 const carritoVacioElement = document.getElementById("carrito-vacio")
 const pieDeCarritoElement = document.getElementById("pie-carrito")
+const vaciarCarritoElement = document.getElementById("vaciar-carrito")
 
 
 function renderProductos() {
@@ -69,9 +20,12 @@ function renderProductos() {
         <img src= ../${producto.img}>
         <h3 >${producto.nombre}</h3>
         <p >$${producto.precio}</p>
+        <div>
         <button class= "restar">-</button>
         <span class="cantidad">${producto.cantidad}</span>
         <button class="sumar">+</button>
+        </div>
+        <button class="vaciar-productos">vaciar</button>
     </div>
     `;
             nuestrosProductos.appendChild(card);
@@ -86,6 +40,13 @@ function renderProductos() {
                 .getElementsByTagName("button")[0]
                 .addEventListener("click", (e) => {
                     restarAlCarrito(producto)
+                    renderProductos();
+                    actualizarTotales()
+                });
+            card
+                .getElementsByClassName("vaciar-productos")[0]
+                .addEventListener("click", (e) => {
+                    vaciarProductos(producto)
                     renderProductos();
                     actualizarTotales()
                 });
@@ -118,3 +79,10 @@ function mensajeVacio() {
 }
 
 mensajeVacio();
+
+vaciarCarritoElement.addEventListener("click", vaciarCarrito);
+function vaciarCarrito() {
+    localStorage.removeItem("productos");
+    actualizarTotales();
+    renderProductos();
+}
