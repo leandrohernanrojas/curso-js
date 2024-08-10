@@ -7,7 +7,6 @@ function agregarAlCarrito(producto) {
         cuenta = 1;
     } else {
         const indiceProducto = memoria.findIndex(productos => productos.id === producto.id);
-        // console.log(indiceProducto)
         const nuevaMemoria = memoria;
         if (indiceProducto === -1) {
             nuevaMemoria.push(getNuevoProductoParaMemoria(producto))

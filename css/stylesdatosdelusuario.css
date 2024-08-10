@@ -20,14 +20,12 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-
 }
 
 .logo {
     width: 180px;
     justify-self: start;
 }
-
 
 header h1 {
     color: rgb(185, 17, 121);
@@ -68,7 +66,7 @@ border-color: rgb(108, 13, 72);
 
 .subtitulos {
     font-family: 'Berkshire Swash', serif;
-    font-style: italic ;
+    font-style: italic;
     font-variant: small-caps;
     color: #b91179;
     font-size: 80px;
@@ -78,13 +76,6 @@ border-color: rgb(108, 13, 72);
 
 
 /*seccion tienda*/
-#carrito-vacio{
-    font-family: 'Berkshire Swash', serif;
-    font-style: italic;
-    font-size: 40px;
-    text-align: center;
-    padding-top: 40px;
-}
 
 #nuestros-productos {
     display: flex;
@@ -106,49 +97,19 @@ border-color: rgb(108, 13, 72);
     border-radius: 5%;
 }
 
-button {
+
+.boton-agregar {
     background-color: rgb(135, 22, 33);
-    font-family: var(--bs-body-font-family);
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
-    width: 10%;
-    border: rgb(135, 22, 33) solid;
-    border-radius: 10%;
 }
 
-button:hover {
-    font-family: var(--bs-body-font-family);
+.boton-agregar:hover {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(176, 40, 54);
-    color: rgb(9, 2, 2);
-    border: rgb(176, 40, 54) solid;
-    border-radius: 10%;
-}
-#pie-carrito{
-    text-align: center;
-    font-family: var(--bs-body-font-family);
-}
-.comprar  {
-width: auto;
-border-radius: 5px;
-padding: 5px;
-border: rgb(135, 22, 33) solid;
-color: rgb(255, 255, 255);background-color: rgb(135, 22, 33);
-text-decoration: none;
-}
-#vaciar-carrito{
-    width: auto;
-    border-radius: 5px;
-    padding: 3.8px;
+    color: rgb(255, 255, 255);
 }
 
-.vaciar-productos{
-    width: auto;
-border-radius: 5px;
-padding: 0 5px 0 5px;
-margin-top: 2%;
-}
-.escondido{
-    display: none;
-}
 
 
 /*fin tienda*/

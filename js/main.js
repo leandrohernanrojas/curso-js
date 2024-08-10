@@ -72,4 +72,3 @@ function renderProductos(productosArray) {
 
 
 renderProductos(productos);
-
