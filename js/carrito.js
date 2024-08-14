@@ -56,6 +56,8 @@ function renderProductos() {
 renderProductos();
 actualizarTotales();
 
+
+
 function actualizarTotales() {
     const producto = JSON.parse(localStorage.getItem("productos"));
     let unidades = 0

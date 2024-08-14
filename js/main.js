@@ -71,4 +71,4 @@ function renderProductos(productosArray) {
 }
 
 
-renderProductos(productos);
+renderProductos(productos) ;
