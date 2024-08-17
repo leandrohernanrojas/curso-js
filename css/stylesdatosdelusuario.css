@@ -74,7 +74,6 @@ nav ul li:hover {
 
 
 
-
 /*seccion datos*/
 
 #ingresar-datos {
@@ -85,34 +84,38 @@ nav ul li:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
+    
 }
 
 input {
     border: rgb(135, 22, 33) solid;
     border-radius: 10px;
     width: 30%;
+    outline: none;
 }
 
-/* input:hover{
-    border: rgb(176, 40, 54) solid;
-} */
 
-button {
+
+#finalizar-compra {
     background-color: rgb(135, 22, 33);
-    font-family: var(--bs-body-font-family);
     color: rgb(255, 255, 255);
     width: 10%;
     border: rgb(135, 22, 33) solid;
-    border-radius: 10%;
+    border-radius: 5%;
+    font-size: 100%;
 }
 
-button:hover {
-    font-family: var(--bs-body-font-family);
+#finalizar-compra:hover {
     background-color: rgb(176, 40, 54);
     color: rgba(244, 200, 133, 0.80);
     border: rgb(176, 40, 54) solid;
     border-radius: 10%;
+}
+#error{
+    background-color: rgba(244, 200, 133, 0.508);
+    width: 50dvh;
+    font-style: italic;
+
 }
 
 /*fin tienda*/

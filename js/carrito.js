@@ -6,6 +6,7 @@ const carritoVacioElement = document.getElementById("carrito-vacio")
 const pieDeCarritoElement = document.getElementById("pie-carrito")
 const vaciarCarritoElement = document.getElementById("vaciar-carrito")
 
+//agrega productos al carrito. Suma y resta productos 
 
 function renderProductos() {
     nuestrosProductos.innerHTML = "";
