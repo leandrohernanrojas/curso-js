@@ -53,7 +53,7 @@ function ingresarDatosDelUsuario() {
     try {
         
         if (nombreBien, telBien,direccionBien,emailbien) {
-            prueba = ""
+            
         }
         else {
             throw new Error("Complete todos los campos correctamente")
