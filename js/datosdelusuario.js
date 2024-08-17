@@ -29,31 +29,31 @@ function ingresarDatosDelUsuario() {
     </form>
             
             `;
-        }
+}
 
-        ingresarDatosDelUsuario()
-        
-        //variables
-        const nombre = document.getElementById("nombre-apellido")
-        const direccion = document.getElementById("direccion")
-        const email = document.getElementById("email")
-        const telefono = document.getElementById("telefono")
-        const form = document.getElementById("form")
-        const error = document.getElementById("error")
-        
-        //funcion para tomar datos y vaciar carrito
-        
-        form.addEventListener("submit", e => {
+ingresarDatosDelUsuario()
+
+//variables
+const nombre = document.getElementById("nombre-apellido")
+const direccion = document.getElementById("direccion")
+const email = document.getElementById("email")
+const telefono = document.getElementById("telefono")
+const form = document.getElementById("form")
+const error = document.getElementById("error")
+
+//funcion para tomar datos y vaciar carrito
+
+form.addEventListener("submit", e => {
     e.preventDefault()
     let prueba = ""
     let nombreBien = nombre.value.length >= 3
     let telBien = telefono.value.length >= 10
-    let direccionBien= direccion.value.length >= 10
+    let direccionBien = direccion.value.length >= 10
     let emailbien = email.value.length >= 10
     try {
-        
-        if (nombreBien, telBien,direccionBien,emailbien) {
-            
+
+        if (nombreBien, telBien, direccionBien, emailbien) {
+
         }
         else {
             throw new Error("Complete todos los campos correctamente")
@@ -73,12 +73,12 @@ function ingresarDatosDelUsuario() {
         function vaciarCarrito() {
             localStorage.removeItem("productos");
             ingresarDatosDelUsuario();
-            
+
         }
         vaciarCarrito();
     }
-    
-    
+
+
 });
 
 
